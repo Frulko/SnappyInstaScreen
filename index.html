@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Hello World!</title>
+  </head>
+  <body>
+
+    <h1>Hello World!</h1>
+    <div>Status: <span class="indicator"></span></div>
+    Nous utilisons Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    et Electron <span id="electron-version"></span>.
+
+    
+    <webview id="foo" src="https://www.github.com/"  style="display:inline-flex; width:640px; height:480px"></webview>
+    <!-- <webview width="100px" height="100px" src="https://www.github.com/"  style="display: block; width: 800px; height: 460px; background-color: red;"></webview> -->
+
+    <script src="./renderer.js"></script>
+    <script src="http://localhost:1234/index.js"></script>
+
+    <script>
+      const onload = () => {
+        const webview = document.querySelector('webview')
+        const indicator = document.querySelector('.indicator')
+        console.log('-> load', webview, indicator)
+    
+        const loadstart = () => {
+          indicator.innerText = 'loading...'
+        }
+    
+        const loadstop = () => {
+          indicator.innerText = 'loaded'
+        }
+    
+        webview.addEventListener('did-start-loading', loadstart)
+        webview.addEventListener('did-stop-loading', loadstop)
+      }
+
+      onload();
+    </script>
+  </body>
+</html>
