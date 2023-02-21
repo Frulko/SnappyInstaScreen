@@ -3,8 +3,9 @@ const path = require('path')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 768,
+    fullscreen: true,
     webPreferences: {
       webviewTag:true,
       preload: path.join(__dirname, 'preload.js'),
@@ -12,10 +13,10 @@ const createWindow = () => {
     }
   })
 
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
-  // win.loadFile('index.html')
-  win.loadURL('http://localhost:1234/');
+  win.loadFile('dist/index.html')
+  // win.loadURL('http://localhost:1234/');
 }
 
 app.whenReady().then(() => {

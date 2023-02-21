@@ -43,9 +43,14 @@ webview.addEventListener('dom-ready', function () {
       pointer-events: none !important;
     }
 
+    ._acay,
     ._aasm,
     ._abl-{
       display: none !important;
+    }
+
+    ._aarg{
+      pointer-events: none !important;
     }
   `
   console.log('-->')
@@ -63,23 +68,29 @@ const current = -1;
 const instagram_accounts = [
   { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
   { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
-
-  { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
-  { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
-  { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
-  // { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
-  // { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
-  // { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
-  // { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
-  // { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
-  // { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
-  // { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
-  // { href: 'https://www.instagram.com/3cm_lin/', name: '3cm_lin', profilePicture: require('./img/11232649_1595557643994646_1139084805_a.jpg')},
-  // { href: 'https://www.instagram.com/snappythekangaroo/', name: 'snappythekangaroo', profilePicture: require('./img/14733195_1798785580339872_6165366677996306432_a.jpg')},
+  { href: 'https://www.instagram.com/alksko/', name: 'alksko', profilePicture: require('./img/314656294_834048857912418_3327879007863840483_n.jpg')},
+  { href: 'https://www.instagram.com/beer___chen/', name: 'beer___chen', profilePicture: require('./img/331614815_1387101652060413_2710415714988690729_n.jpg')},
+  { href: 'https://www.instagram.com/benzank/', name: 'benzank', profilePicture: require('./img/284572580_534424598361932_2808288476836167865_n.jpg')},
+  { href: 'https://www.instagram.com/shusaku1977/', name: 'shusaku1977', profilePicture: require('./img/51694373_1343533495771624_3790974921291595776_n.jpg')},
+  { href: 'https://www.instagram.com/hoodass/', name: 'hoodass', profilePicture: require('./img/286418193_161209863066646_8289812443628477331_n.jpg')},
+  { href: 'https://www.instagram.com/hushartist/', name: 'hushartist', profilePicture: require('./img/248611139_848616692467520_7314265106293823948_n.jpg')},
+  { href: 'https://www.instagram.com/iamslip/', name: 'iamslip', profilePicture: require('./img/72781253_472917560245004_338777610035134464_n.jpg')},
+  { href: 'https://www.instagram.com/jamie_rawlings_artist/', name: 'jamie_rawlings_artist', profilePicture: require('./img/279521875_683512482935660_1612378133208279526_n.jpg')},
+  { href: 'https://www.instagram.com/johnyuyi/', name: 'johnyuyi', profilePicture: require('./img/20225770_1397590113691303_5387235122128879616_n.jpg')},
+  { href: 'https://www.instagram.com/popovysisters/', name: 'popovysisters', profilePicture: require('./img/10523273_589042361214122_116069153_a.jpg')},
+  { href: 'https://www.instagram.com/pouyasnap/', name: 'pouyasnap', profilePicture: require('./img/131049516_2686825134916597_5370924487796392095_n.jpg')},
+  { href: 'https://www.instagram.com/shamsiahassani/', name: 'shamsiahassani', profilePicture: require('./img/317910790_822270312396594_7210288018613425488_n.jpg')},
+  { href: 'https://www.instagram.com/takashidongjing/', name: 'takashidongjing', profilePicture: require('./img/92290872_295631641419124_7881427269204312064_n.jpg')},
+  { href: 'https://www.instagram.com/theonigiriart/', name: 'theonigiriart', profilePicture: require('./img/315207132_518574976842501_5137628215016130268_n.jpg')},
+  { href: 'https://www.instagram.com/vincent_bal/', name: 'vincent_bal', profilePicture: require('./img/13269327_138424356561466_1450273792_a.jpg')},
+ 
 ];
 
 
 const bottomEl = document.querySelector('.bottom_bar');
+const divBottomEl = document.createElement('div');
+
+bottomEl.appendChild(divBottomEl);
 
 instagram_accounts.forEach(({ href, name, profilePicture }, index) => {
 
@@ -99,7 +110,7 @@ instagram_accounts.forEach(({ href, name, profilePicture }, index) => {
   linkAccountEl.appendChild(imgWrapperEl);
   linkAccountEl.appendChild(spanEl);
 
-  bottomEl.appendChild(linkAccountEl);
+  divBottomEl.appendChild(linkAccountEl);
 
   linkAccountEl.addEventListener('click', () => {
     console.log('-->', webview.loadURL(href));

@@ -17,7 +17,7 @@
 
 #app .bottom_bar{
   width: 100vw;
-  min-height: 100px;
+  min-height: 160px;
   background: black;
   display: flex;
   justify-content: center;
@@ -26,6 +26,14 @@
   overflow-x: scroll;
   padding-left: 100px;
   padding-right: 100px;
+  position: relative;
+}
+
+#app .bottom_bar > div{
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
 }
 
 #app .bottom_bar button img{

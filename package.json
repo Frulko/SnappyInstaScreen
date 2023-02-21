@@ -8,7 +8,9 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "electron": "ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .",
-    "parcel": "parcel src/index.html"
+    "parcel": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
+    "raspberrypi": "electron-forge package --arch=arm64 --platform=linux"
   },
   "author": "",
   "license": "ISC",
