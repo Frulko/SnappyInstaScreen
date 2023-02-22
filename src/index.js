@@ -43,7 +43,7 @@ webview.addEventListener('dom-ready', function () {
       pointer-events: none !important;
     }
 
-    ._acay,
+    /* ._acay, */
     ._aasm,
     ._abl-{
       display: none !important;
